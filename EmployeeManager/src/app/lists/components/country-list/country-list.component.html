@@ -1,0 +1,33 @@
+<app-loader [loading]="loading"></app-loader>
+
+<h4>Countries list</h4>
+<button class="btn btn-link" (click)="addItem()">add</button>
+
+<div *ngIf="countries" class="countries-list">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cntr of countries; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>
+                    <span>{{cntr.id}}</span>
+                </td>
+                <td>
+                    {{cntr.name}}
+                </td>
+                <td>
+                    <button class="btn btn-link ml-3" (click)="editItem(cntr.id)">edit</button>
+                    <button class="btn btn-link ml-3" (click)="delItem(cntr.id)">del</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-center" *ngIf="!countries">List is empty!</div>

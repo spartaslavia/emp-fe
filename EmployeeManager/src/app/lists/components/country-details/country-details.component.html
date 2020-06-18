@@ -1,0 +1,16 @@
+<div class="mt-9">
+    <app-loader [loading]="loading"></app-loader>
+
+    <h4>Country details</h4>
+
+    <form [formGroup]="generalForm">
+
+        <label for="name">Name</label>
+        <input class="form-control col-6" id="name" formControlName="name">
+        <div *ngIf="submitted &&  generalForm.get('name').hasError('required')" class="red">
+            required
+        </div>
+
+        <button class="btn btn-outline-primary mt-3" (click)="onSubmit()">Submit</button>
+    </form>
+</div>

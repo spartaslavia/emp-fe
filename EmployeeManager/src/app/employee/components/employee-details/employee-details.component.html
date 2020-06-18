@@ -1,0 +1,98 @@
+<div class="mt-9">
+    <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <h4>Employee details</h4>
+
+    <form [formGroup]="generalForm">
+
+        <label for="firstName">First Name</label>
+        <input class="form-control col-6" id="firstName" formControlName="firstName">
+        <div *ngIf="submitted &&  generalForm.get('firstName').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="lastName">Last Name</label>
+        <input class="form-control col-6" id="lastName" formControlName="lastName">
+        <div *ngIf="submitted &&  generalForm.get('lastName').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="dateBirth">Birth Date</label>
+        <div class="form-inline">
+            <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateBirth"
+                formControlName="dateBirth" ngbDatepicker #a="ngbDatepicker">
+            <button class="btn btn-outline-primary" (click)="a.toggle()">></button>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('dateBirth').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="gender">Gender</label>
+        <div>
+            <select class="form-control custom-select col-6" id="gender" formControlName="gender">
+                <option *ngFor="let key of genderKeys" [value]="key" [label]="genders[key]"></option>
+            </select>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('gender').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="country">Country</label>
+        <div>
+            <select class="form-control custom-select col-6" formControlName='country'>
+                <option *ngFor="let item of countries" [value]="item['id']" [label]="item['name']"></option>
+            </select>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('country').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="jobCategory">Job Category</label>
+        <div>
+            <select class="form-control custom-select col-6" formControlName='jobCategory'>
+                <option *ngFor="let item of jobCategories" [value]="item['id']" [label]="item['title']"></option>
+            </select>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('jobCategory').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="email">Email</label>
+        <input class="form-control col-6" type="email" id="email" formControlName="email">
+        <div *ngIf="submitted &&  generalForm.get('email').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="phone">Phone</label>
+        <input class="form-control col-6" id="phone" formControlName="phone">
+        <div *ngIf="submitted &&  generalForm.get('phone').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="dateJoined">Joined Date</label>
+        <div class="form-inline">
+            <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateJoined"
+                formControlName="dateJoined" ngbDatepicker #b="ngbDatepicker">
+            <button class="btn btn-outline-primary" (click)="b.toggle()">></button>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('dateJoined').hasError('required')" class="red">
+            required
+        </div>
+
+        <label for="dateExited">Exited Date</label>
+        <div class="form-inline">
+            <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateExited"
+                formControlName="dateExited" ngbDatepicker #c="ngbDatepicker">
+            <button class="btn btn-outline-primary" (click)="c.toggle()">></button>
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('dateExited').hasError('required')" class="red">
+            required
+        </div>
+
+        <button class="btn btn-outline-primary mt-3" (click)="onSubmit()">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="mt-9">
+    <app-loader [loading]="loading"></app-loader>
+
+    <h4>Job category details</h4>
+
+    <form [formGroup]="generalForm">
+
+        <label for="title">Title</label>
+        <input class="form-control col-6" id="title" formControlName="title">
+        <div *ngIf="submitted &&  generalForm.get('title').hasError('required')" class="red">
+            required
+        </div>
+
+        <button class="btn btn-outline-primary mt-3" (click)="onSubmit()">Submit</button>
+    </form>
+</div>
