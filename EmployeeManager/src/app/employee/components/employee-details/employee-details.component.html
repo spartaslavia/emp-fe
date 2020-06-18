@@ -62,9 +62,12 @@
         </div>
 
         <label for="email">Email</label>
-        <input class="form-control col-6" type="email" id="email" formControlName="email">
+        <input class="form-control col-6" type="email" name="email" id="email" formControlName="email">
         <div *ngIf="submitted &&  generalForm.get('email').hasError('required')" class="red">
             required
+        </div>
+        <div *ngIf="submitted &&  generalForm.get('email').hasError('email')" class="red">
+            email format
         </div>
 
         <label for="phone">Phone</label>

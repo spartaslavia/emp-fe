@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
-import { EmpCommonModule } from '../common/emp-common.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -19,7 +18,6 @@ import { EmpCommonModule } from '../common/emp-common.module';
         CommonModule,
         NgbModule,
         ReactiveFormsModule,
-        // EmpCommonModule,
     ]
 })
 export class EmployeeModule { }

@@ -56,7 +56,7 @@ export class EmployeeDetailsComponent implements OnInit {
             lastName: ['', Validators.required],
             dateBirth: ['', Validators.required],
             gender: ['', Validators.required],
-            email: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
             phone: ['', Validators.required],
             dateJoined: ['', Validators.required],
             dateExited: ['', Validators.required],
