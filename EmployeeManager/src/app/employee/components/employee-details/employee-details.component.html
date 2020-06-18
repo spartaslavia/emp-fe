@@ -24,8 +24,7 @@
         <label for="dateBirth">Birth Date</label>
         <div class="form-inline">
             <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateBirth"
-                formControlName="dateBirth" ngbDatepicker #a="ngbDatepicker">
-            <button class="btn btn-outline-primary" (click)="a.toggle()">></button>
+                formControlName="dateBirth" ngbDatepicker #a="ngbDatepicker" (click)="a.toggle()">
         </div>
         <div *ngIf="submitted &&  generalForm.get('dateBirth').hasError('required')" class="red">
             required
@@ -79,8 +78,7 @@
         <label for="dateJoined">Joined Date</label>
         <div class="form-inline">
             <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateJoined"
-                formControlName="dateJoined" ngbDatepicker #b="ngbDatepicker">
-            <button class="btn btn-outline-primary" (click)="b.toggle()">></button>
+                formControlName="dateJoined" ngbDatepicker #b="ngbDatepicker" (click)="b.toggle()">
         </div>
         <div *ngIf="submitted &&  generalForm.get('dateJoined').hasError('required')" class="red">
             required
@@ -89,8 +87,7 @@
         <label for="dateExited">Exited Date</label>
         <div class="form-inline">
             <input class="form-control col-2 mr-sm-2" placeholder="yyyy-mm-dd" id="dateExited"
-                formControlName="dateExited" ngbDatepicker #c="ngbDatepicker">
-            <button class="btn btn-outline-primary" (click)="c.toggle()">></button>
+                formControlName="dateExited" ngbDatepicker #c="ngbDatepicker" (click)="c.toggle()">
         </div>
         <div *ngIf="submitted &&  generalForm.get('dateExited').hasError('required')" class="red">
             required

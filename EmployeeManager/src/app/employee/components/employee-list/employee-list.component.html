@@ -29,7 +29,7 @@
                 <th scope="row">{{i+1}}</th>
                 <td>{{emp.id}}</td>
                 <td>{{emp.firstName}} {{emp.lastName}}</td>
-                <td>{{emp.birthDate}}</td>
+                <td>{{setFormat(emp.birthDate, 'DD/MM/YYYY')}}</td>
                 <td>{{genders[emp.gender]}}</td>
                 <td>{{emp.phoneNumber}}</td>
                 <td>{{emp.email}}</td>

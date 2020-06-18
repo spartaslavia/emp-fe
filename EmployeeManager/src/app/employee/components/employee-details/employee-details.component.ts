@@ -11,11 +11,10 @@ import { Country } from '../../../lists/models/country';
 import { JobCategory } from '../../../lists/models/jobCategory';
 import { JobCategoryService } from '../../../lists/services/job-category.service';
 
-
 @Component({
     selector: 'app-employee-details',
     templateUrl: './employee-details.component.html',
-    styleUrls: ['./employee-details.component.css']
+    styleUrls: ['./employee-details.component.css'],
 })
 export class EmployeeDetailsComponent implements OnInit {
     private subs: Subscription[] = [];
@@ -123,9 +122,9 @@ export class EmployeeDetailsComponent implements OnInit {
         if (fb && emp) {
             emp.firstName = fb.get('firstName').value;
             emp.lastName = fb.get('lastName').value;
-            emp.birthDate = moment(fb.get('dateBirth').value);
-            emp.joinedDate = moment(fb.get('dateJoined').value);
-            emp.exitedDate = moment(fb.get('dateExited').value);
+            emp.birthDate = moment(fb.get('dateBirth').value).toDate();
+            emp.joinedDate = moment(fb.get('dateJoined').value).toDate();
+            emp.exitedDate = moment(fb.get('dateExited').value).toDate();
             emp.email = fb.get('email').value;
             emp.phoneNumber = fb.get('phone').value;
             emp.gender = fb.get('gender').value;

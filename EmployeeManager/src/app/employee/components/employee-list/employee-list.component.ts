@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Employee, Gender } from '../../models/employee';
 import { Subscription, NEVER } from 'rxjs';
+import * as momentjs from 'moment';
 import { EmployeeService } from '../../services/employee.service';
 import { catchError, finalize, map, concatMap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-employee-list',
@@ -39,6 +40,10 @@ export class EmployeeListComponent implements OnInit {
                 this.employees = data;
             })
         );
+    }
+
+    setFormat(date: string, pattern: string) {
+        return momentjs(date).format(pattern);
     }
 
     addItem(){

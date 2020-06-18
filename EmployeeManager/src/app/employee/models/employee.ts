@@ -2,14 +2,14 @@ export class Employee {
     id: string;
     firstName: string;
     lastName: string;
-    birthDate: moment.Moment;
+    birthDate: Date;
     gender: Gender;
     jobCategoryId: number;
     email: string;
     phoneNumber: string;
     countryId: number;
-    joinedDate: moment.Moment;
-    exitedDate: moment.Moment;
+    joinedDate: Date;
+    exitedDate: Date;
 }
 
 export enum Gender {
